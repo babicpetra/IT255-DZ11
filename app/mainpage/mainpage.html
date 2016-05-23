@@ -1,0 +1,22 @@
+
+<form class="navbar-form" role="search">
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search" [(ngModel)]="name">
+    </div>
+</form>
+<div class="col-lg-12">
+    <br/><h3>Sobe</h3><br/> <br/>
+    <div class= "sobe" *ngFor="#soba of sobe| SearchPipe:name">
+        <strong>Room name:</strong> {{soba.name}}
+        <br/>
+        <span *ngIf="soba.hasTV == 'yes'">
+        This room<strong> has</strong> a TV.
+        </span>
+        <span *ngIf="soba.hasTV == 'no'">
+       This room <strong>doesnt</strong> have a TV.
+        </span><br/>
+        <strong>Beds:</strong> {{soba.beds}}
+        <br/>
+        <br/>
+</div>
+</div>
